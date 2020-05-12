@@ -35,7 +35,7 @@ const tasks = [
   }];
 
 class App extends React.Component {
-  
+
   getProjects(){
     return [...new Set(this.state.tasks.map(task => task.project))];
   }
@@ -43,7 +43,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {tasks: tasks};
-  } 
+  }
   render() {
     return (
       <div>
@@ -54,7 +54,7 @@ class App extends React.Component {
               <Filters projects = {this.getProjects()}/>
             </aside>
             <main className="col-sm-8 col-12 below-nav">
-              <TodoList tasks = {tasks}/>
+              <TodoList tasks = {this.state.tasks}/>
               <button type="button" className="btn btn-lg btn-success fixed-right-bottom">&#43;</button>
             </main>
           </div>
